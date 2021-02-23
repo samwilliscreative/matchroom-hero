@@ -23,11 +23,19 @@
   &--left {
     left: 0;
     z-index: 51;
+
+    @media (max-width: 768px) {
+      animation: slide-right 1000ms ease-in-out;
+    }
 }
 
   &--right {
     right: 0;
     z-index: 50;
+
+    @media (max-width: 768px) {
+      animation: slide-left 1000ms ease-in-out;
+    }
   }
 }
 
@@ -43,15 +51,15 @@
 
   &--left {
     left: 0;
-    transform: translateX(-25%);
     z-index: 55;
-}
+    animation: slide-right 1000ms ease-in-out;
+  }
 
   &--right {
     right: 0;
-    transform: translateX(25%);
     z-index: 54;
-  }
+    animation: slide-left 1000ms ease-in-out;
+}
 }
 
 .bg-smoke {
@@ -60,6 +68,10 @@
   left: 0;
   max-height: 100%;
   z-index: 49;
+
+  &--animated {
+    animation: move-right 70000ms linear infinite;
+  }
 }
 
 .shadow {
@@ -70,15 +82,29 @@
   z-index: 60;
 }
 
-.anim-right {
-  animation: move-right 70000ms linear infinite;
-}
-
 @keyframes move-right {
   0% {
     transform: translateX(-100%);
   }
   100% {
     transform: translateX(100%);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(25%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
