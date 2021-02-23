@@ -61,3 +61,16 @@
   width: 100%;
   z-index: 60;
 }
+
+.anim-right {
+  animation: move-right 70000ms linear infinite;
+}
+
+@keyframes move-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
