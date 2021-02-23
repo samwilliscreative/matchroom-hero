@@ -1,0 +1,9 @@
+<ng-container *ngIf="heroContent$ | async">
+  <div class="hero-content">
+    <app-hero-body [content]="heroBody"></app-hero-body>
+    <app-hero-button [content]="heroButton"></app-hero-button>
+  </div>
+
+  <app-hero-backgrounds [content]="heroBody"></app-hero-backgrounds>
+
+</ng-container>

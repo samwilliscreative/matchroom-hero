@@ -1,6 +1,23 @@
 :host {
-  display: block;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
   background: url('/assets/img/hero/hero-bg.jpg') no-repeat bottom center;
   background-size: cover;
+  color: #fff;
+  overflow-x: hidden;
 }
+
+.hero-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+
