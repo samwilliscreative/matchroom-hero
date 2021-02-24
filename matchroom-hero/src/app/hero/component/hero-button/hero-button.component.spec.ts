@@ -16,6 +16,11 @@ describe('HeroButtonComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HeroButtonComponent);
     component = fixture.componentInstance;
+
+    component.content = {
+      text: "Purchase your pass",
+      url: "https://facebook.com"
+    };
     fixture.detectChanges();
   });
 
