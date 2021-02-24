@@ -1,6 +1,7 @@
 export interface HeroContent {
   button: {
-    text: string
+    text: string,
+    url: string
   },
   eventBelt: string,
   eventDate: string,

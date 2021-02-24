@@ -1,3 +1,4 @@
 export interface HeroButton {
-  text: string
+  text: string,
+  url: string
 }

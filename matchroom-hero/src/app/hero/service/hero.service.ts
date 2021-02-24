@@ -12,7 +12,8 @@ export class HeroService {
     // Backup code for if the API stops working, not sure what the time limit is for it
     backupContent: HeroContent = {
       button: {
-        text: "Purchase your pass"
+        text: "Purchase your pass",
+        url: "https://facebook.com"
       },
       eventBelt: "Heavyweight championship of the world",
       eventDate: "2019-12-07T22:00:00+0000",
@@ -31,7 +32,7 @@ export class HeroService {
   constructor(private httpClient: HttpClient) { }
 
   getContent(): Observable<HeroContent> {
-    return this.httpClient.get<HeroContent>('https://api.mocki.io/v1/ade74986').pipe(
+    return this.httpClient.get<HeroContent>('https://api.mocki.io/v1/e026163b').pipe(
       catchError(err => {
         // Should really throw an error but returning my own data incase API stops working
         // return throwError(err);
