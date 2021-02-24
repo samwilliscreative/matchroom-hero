@@ -1,3 +1,5 @@
+$mq-mobile: 768px;
+
 :host {
   position: relative;
   display: flex;
@@ -11,13 +13,46 @@
   overflow-x: hidden;
 }
 
-.hero-content {
+.hero__content {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  flex: 1;
+  padding: 10rem 1rem;
   z-index: 100;
+
+  @media (min-width: $mq-mobile) {
+    justify-content: center;
+    padding: 0 1rem;
+  }
 }
 
+.hero__buttons {
+  display: flex;
+  align-items: center;
 
+  span {
+    margin: 0 0.1875rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    transform: rotate(180deg);
+  }
+}
+
+.icon {
+  width: 1.625rem;
+  margin-right: 0.3125rem;
+}
+
+.show--mobile {
+  display: block;
+
+  @media (min-width: $mq-mobile) {
+    display: none;
+  }
+}

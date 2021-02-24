@@ -1,3 +1,6 @@
+$mq-mobile: 768px;
+$mq-small-mobile: 576px;
+
 :host {
   position: absolute;
   display: block;
@@ -9,11 +12,12 @@
 .bg-fighter {
   position: absolute;
   bottom: 0;
-  max-width: 85%;
-  max-height: 100%;
+  max-width: 100%;
+  max-height: 60%;
 
-  @media (min-width: 768px) {
+  @media (min-width: $mq-mobile) {
     max-width: 60%;
+    max-height: 100%;
   }
 
   @media (min-width: 1400px) {
@@ -21,20 +25,33 @@
   }
 
   &--left {
-    left: 0;
-    z-index: 51;
+    left: -10%;
+    z-index: 50;
 
-    @media (max-width: 768px) {
+    @media (min-width: $mq-small-mobile) {
+      left: -6%;
+    }
+
+    @media (max-width: $mq-mobile) {
       animation: slide-right 1000ms ease-in-out;
     }
-}
+
+    @media (min-width: $mq-mobile) {
+      left: 0;
+      z-index: 51;
+    }
+  }
 
   &--right {
     right: 0;
-    z-index: 50;
+    z-index: 51;
 
-    @media (max-width: 768px) {
+    @media (max-width: $mq-mobile) {
       animation: slide-left 1000ms ease-in-out;
+    }
+
+    @media (min-width: $mq-mobile) {
+      z-index: 50;
     }
   }
 }
@@ -44,22 +61,43 @@
   position: absolute;
   bottom: 0;
   max-width: 50%;
+  max-height: 65%;
 
-  @media (min-width: 768px) {
-    display: block;;
+  @media (min-width: $mq-mobile) {
+    display: block;
   }
 
   &--left {
-    left: 0;
+    right: 50%;
     z-index: 55;
-    animation: slide-right 1000ms ease-in-out;
+    animation: slide-right 1300ms ease-in-out;
   }
 
   &--right {
-    right: 0;
+    left: 50%;
     z-index: 54;
-    animation: slide-left 1000ms ease-in-out;
+    animation: slide-left 1300ms ease-in-out;
+  }
+
+  img {
+    width: 100%;
+  }
 }
+
+.scroll-anim {
+  animation-play-state: paused;
+  animation-delay: calc(var(--hero-scroll) * -1s);
+  animation-direction: alternate-reverse;
+  animation-duration: 1300ms;
+  animation-timing-function: ease-in-out;
+
+  &--left {
+    animation-name: slide-right;
+  }
+
+  &--right {
+    animation-name: slide-left;
+  }
 }
 
 .bg-smoke {
@@ -79,6 +117,8 @@
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   z-index: 60;
 }
 
@@ -93,7 +133,7 @@
 
 @keyframes slide-right {
   0% {
-    transform: translateX(-25%);
+    transform: translateX(-40%);
   }
   100% {
     transform: translateX(0);
@@ -102,7 +142,7 @@
 
 @keyframes slide-left {
   0% {
-    transform: translateX(25%);
+    transform: translateX(40%);
   }
   100% {
     transform: translateX(0);

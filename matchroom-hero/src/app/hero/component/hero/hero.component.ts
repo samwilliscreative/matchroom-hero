@@ -15,13 +15,25 @@ export class HeroComponent implements OnInit {
   heroContent$: Observable<HeroContent>;
   heroBody: HeroBody;
   heroButton: HeroButton;
+  watchButton: HeroButton = {
+    text: "Watch live now",
+    url: "https://google.com"
+  }
 
   constructor(
-    private heroService: HeroService
+    private heroService: HeroService,
   ) { }
 
   ngOnInit(): void {
     this.heroContent$ = this.getHeroContent();
+    this.addHeroScrollListener()
+  }
+
+  addHeroScrollListener(): void{
+    window.addEventListener('scroll', () => {
+      const heroHeight: number = (document.getElementsByTagName('app-hero')[0]as HTMLElement).offsetHeight;
+      document.body.style.setProperty('--hero-scroll', (window.pageYOffset / heroHeight)+'');
+    }, false);
   }
 
   getHeroContent(): Observable<HeroContent> {
@@ -50,7 +62,8 @@ export class HeroComponent implements OnInit {
 
   buildHeroButton(content: HeroContent): HeroButton {
     const heroButton: HeroButton = {
-      text: content.button.text
+      text: content.button.text,
+      url: content.button.url
     }
 
     return heroButton;
