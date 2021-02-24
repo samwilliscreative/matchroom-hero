@@ -1,0 +1,44 @@
+$mq-desktop: 1400px;
+$mq-mobile: 768px;
+$mq-small-mobile: 576px;
+
+$size-80: 5rem;
+$size-56: 3.5rem;
+$size-40: 2.5rem;
+$size-30: 1.875rem;
+$size-29: 1.8125rem;
+$size-26: 1.625rem;
+$size-24: 1.5rem;
+$size-20: 1.25rem;
+$size-18: 1.125rem;
+$size-16: 1rem;
+$size-15: 0.9375rem;
+$size-14: 0.875rem;
+$size-13: 0.8125rem;
+$size-10: 0.625rem;
+$size-8: 0.5rem;
+$size-5: 0.3125rem;
+$size-3: 0.1875rem;
+$size-2: 0.125rem;
+$size-1: 0.0625rem;
+
+$color-black: #000;
+$color-gold: #D2B085;
+$color-red: #D43B38;
+$color-white: #fff;
+
+$gradient-gold: linear-gradient(
+  to right,
+  lighten($color-gold, 15%) 0,
+  darken($color-gold, 15%) 22%,
+  $color-gold 45%,
+  lighten($color-gold, 30%) 50%,
+  $color-gold 55%,
+  darken($color-gold, 15%) 78%,
+  lighten($color-gold, 15%) 100%
+);
+
+$font-anton: 'Anton', sans-serif;
+$font-openSans: 'Open Sans', sans-serif;
+
+$shadow: 0 0 3px rgba($color-black, 0.29);

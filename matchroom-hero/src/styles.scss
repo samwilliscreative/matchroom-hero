@@ -1,3 +1,5 @@
+@import 'src/scss/partials/variables';
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -6,5 +8,19 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $font-openSans;
+}
+
+.show--mobile {
+  display: block;
+
+  @media (min-width: $mq-mobile) {
+    display: none;
+  }
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  transform: rotate(180deg);
 }

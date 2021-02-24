@@ -1,4 +1,4 @@
-$mq-mobile: 768px;
+@import 'src/scss/partials/variables';
 
 :host {
   position: relative;
@@ -9,7 +9,7 @@ $mq-mobile: 768px;
   min-height: 100vh;
   background: url('/assets/img/hero/hero-bg.jpg') no-repeat bottom center;
   background-size: cover;
-  color: #fff;
+  color: $color-white;
   overflow-x: hidden;
 }
 
@@ -20,12 +20,12 @@ $mq-mobile: 768px;
   align-items: center;
   justify-content: space-between;
   flex: 1;
-  padding: 10rem 1rem;
+  padding: 10rem $size-16;
   z-index: 100;
 
   @media (min-width: $mq-mobile) {
     justify-content: center;
-    padding: 0 1rem;
+    padding: 0 $size-16;
   }
 }
 
@@ -34,25 +34,16 @@ $mq-mobile: 768px;
   align-items: center;
 
   span {
-    margin: 0 0.1875rem;
-    font-size: 0.875rem;
+    margin: 0 $size-3;
+    font-size: $size-14;
     font-weight: 700;
     text-transform: uppercase;
-    writing-mode: vertical-rl;
-    text-orientation: sideways;
-    transform: rotate(180deg);
   }
 }
 
 .icon {
-  width: 1.625rem;
-  margin-right: 0.3125rem;
+  width: $size-26;
+  margin-right: $size-5;
 }
 
-.show--mobile {
-  display: block;
 
-  @media (min-width: $mq-mobile) {
-    display: none;
-  }
-}

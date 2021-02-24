@@ -1,5 +1,5 @@
-$mq-mobile: 768px;
-$mq-small-mobile: 576px;
+@import 'src/scss/partials/variables';
+@import 'src/scss/partials/animation';
 
 :host {
   position: absolute;
@@ -20,7 +20,7 @@ $mq-small-mobile: 576px;
     max-height: 100%;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: $mq-desktop) {
     max-width: 75%;
   }
 
@@ -131,29 +131,4 @@ $mq-small-mobile: 576px;
   z-index: 60;
 }
 
-@keyframes move-right {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
 
-@keyframes slide-right {
-  0% {
-    transform: translateX(-40%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slide-left {
-  0% {
-    transform: translateX(40%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
