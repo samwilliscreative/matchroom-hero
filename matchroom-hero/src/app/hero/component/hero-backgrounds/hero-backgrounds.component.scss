@@ -54,6 +54,10 @@ $mq-small-mobile: 576px;
       z-index: 50;
     }
   }
+
+  img {
+    width: 100%;
+  }
 }
 
 .fighter {
@@ -97,6 +101,12 @@ $mq-small-mobile: 576px;
 
   &--right {
     animation-name: slide-left;
+  }
+
+  &--only-mobile {
+    @media (min-width: $mq-mobile) {
+      animation: none;
+    }
   }
 }
 
