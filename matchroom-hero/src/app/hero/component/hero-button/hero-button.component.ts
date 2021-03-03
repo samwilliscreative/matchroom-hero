@@ -1,17 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { HeroButton } from './hero-button-model.interface';
+import { Button } from '../../service/button-model.interface';
 
 @Component({
   selector: 'app-hero-button',
   templateUrl: './hero-button.component.html',
-  styleUrls: ['./hero-button.component.scss']
+  styleUrls: ['./hero-button.component.scss'],
 })
 export class HeroButtonComponent implements OnInit {
-  @Input() content: HeroButton;
+  @Input() content: Button;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
